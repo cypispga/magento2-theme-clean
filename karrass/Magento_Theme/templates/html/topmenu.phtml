@@ -1,0 +1,61 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php"><img src="images/karrass-logo.svg" width="144" height="31"></a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown active">
+            <a href="#" class="dropdown-toggle"
+            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Karrass <span class="caret">
+            <img src="css/arrow-caret.svg" width="11" height="6" /></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="why-karrass.php">Why Karrass?</a></li>
+              <li><a href="seminar.php">Seminars</a></li>
+              <li><a href="discounts.php">Discounts</a></li>
+            </ul>
+          </li>
+        <li><a href="seminar.php">The Seminar</a></li>
+        <li><a href="in-house-seminars.php">In-house Seminars</a></li>
+        <li><a href="testimonials.php">Testimonials</a></li>
+        <li><a href="who-attends.php">Who Attends</a></li>
+      </ul>
+      <div class="navbar-nav-right"> 
+        <a class="button brown" href="contact.php">Contact</a>
+        <a href="search.php" class="button blue icon space-left">Register <svg width="25" height="19" viewBox="0 0 25 19" xmlns="http://www.w3.org/2000/svg"><title>Icon</title><g stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M23.875 9.572L15.59 1zM1 9.5h22.5M23.875 9.572L15.605 18"/></g></svg>
+</a>
+      </div>
+    </div><!--/.nav-collapse -->
+  </div>
+
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <?php /* @escapeNotVerified */ echo $_menu; ?>
+        <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
+    </ul>
+</nav>
